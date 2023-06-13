@@ -10,8 +10,8 @@
 </p>
 
 ### OS
-[![Linux](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/maldevich)
-[![Windows](https://img.shields.io/badge/Windows-black?style=for-the-badge&logo=Windows)](https://github.com/maldevich)
+[![Linux - Garuda & Pop_OS!](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/maldevich)
+[![Windows - Windows 11](https://img.shields.io/badge/Windows-black?style=for-the-badge&logo=Windows)](https://github.com/maldevich)
 
 <details>
 <p align="center">
