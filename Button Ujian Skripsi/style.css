@@ -1,32 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
-:root {
---glow-color: hsl(186 100% 69%);
-}
+:root {--glow-color: hsl(186 100% 69%);}
 
 *,
 *::before,
-*::after {
-box-sizing: border-box;
-}
+*::after {box-sizing: border-box;}
 
 html,
-body {
-height: 100%;
-width: 100%;
-overflow: hidden;
-}
+body {height: 100%;width: 100%;overflow: hidden;}
 
-body {
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background: black;
-}
+body {min-height: 100vh;display: flex;justify-content: center;align-items: center;background: black;}
 
-.glowing-btn {
-position: relative;
+.glowing-btn {position: relative;
 color: var(--glow-color);
 cursor: pointer;
 padding: 0.35em 1em;
