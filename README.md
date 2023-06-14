@@ -6,6 +6,8 @@
         I'm Aulia Rahman.<br>
         Currently learning to code again.<br>
         Open to learning everything new nowaday.<br>
+        My favorite Linux is Garuda and Pop!_OS.<br>
+        Forced to use for work Windoze 11.<br>
     </i><br>
 </p>
 
