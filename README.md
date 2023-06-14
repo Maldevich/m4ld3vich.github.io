@@ -15,9 +15,9 @@
 [![JavaScript](https://img.shields.io/badge/javascript-black?style=for-the-badge&logo=javascript)](https://github.com/maldevich)
 [![Bash](https://img.shields.io/badge/bash-black?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://github.com/maldevich)
 ### Technologies & Frameworks
-[![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://github.com/wervlad)
-[![HTML5](https://img.shields.io/badge/html5-black?style=for-the-badge&logo=html5)](https://hub.docker.com/u/wervlad)
-[![CSS3](https://img.shields.io/badge/css3-black?style=for-the-badge&logo=css3)](https://hub.docker.com/u/wervlad)
+[![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://github.com/maldevich)
+[![HTML5](https://img.shields.io/badge/html5-black?style=for-the-badge&logo=html5)](https://hub.docker.com/u/maldevich)
+[![CSS3](https://img.shields.io/badge/css3-black?style=for-the-badge&logo=css3)](https://hub.docker.com/u/maldevich)
 ### OS
 [![Linux - Garuda & Pop_OS!](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/maldevich)
 [![Windows - Windows 11](https://img.shields.io/badge/Windows-black?style=for-the-badge&logo=Windows)](https://github.com/maldevich)
