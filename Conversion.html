@@ -27,6 +27,14 @@
       border-radius: 3px;
       border: 1px solid #ccc;
     }
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
     .btn-container {
       margin-top: 20px;
       display: flex;
@@ -44,6 +52,15 @@
       background-color: #ccc;
       cursor: not-allowed;
     }
+    .explanation {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -60,6 +77,14 @@
       <button id="resetBtn">Reset</button>
       <button id="reverseBtn">Reverse</button>
     </div>
+
+    <div class="explanation" id="explanation"></div>
+
+    <hr>
+
+    <h2>Add a Comment</h2>
+    <textarea id="comment" placeholder="Enter your comment"></textarea>
+    <button id="submitBtn">Submit</button>
   </div>
 
   <script>
@@ -69,6 +94,9 @@
     const convertBtn = document.getElementById('convertBtn');
     const resetBtn = document.getElementById('resetBtn');
     const reverseBtn = document.getElementById('reverseBtn');
+    const commentInput = document.getElementById('comment');
+    const submitBtn = document.getElementById('submitBtn');
+    const explanationContainer = document.getElementById('explanation');
 
     // Enable or disable Convert button based on input
     celsiusInput.addEventListener('input', function () {
@@ -80,13 +108,17 @@
       const celsius = parseFloat(celsiusInput.value);
       const fahrenheit = (celsius * 9 / 5) + 32;
       fahrenheitInput.value = fahrenheit.toFixed(2);
+
+      // Display explanation
+      explanationContainer.textContent = `${celsius} degrees Celsius is equal to ${fahrenheit.toFixed(2)} degrees Fahrenheit.`;
     });
 
-    // Reset the inputs
+    // Reset the inputs and explanation
     resetBtn.addEventListener('click', function () {
       celsiusInput.value = '';
       fahrenheitInput.value = '';
       convertBtn.disabled = true;
+      explanationContainer.textContent = '';
     });
 
     // Reverse the conversion
@@ -95,6 +127,26 @@
       const fahrenheit = parseFloat(fahrenheitInput.value);
       celsiusInput.value = fahrenheit ? ((fahrenheit - 32) * 5 / 9).toFixed(2) : '';
       fahrenheitInput.value = celsius ? ((celsius * 9 / 5) + 32).toFixed(2) : '';
+
+      // Display explanation
+      if (celsius && fahrenheit) {
+        explanationContainer.textContent = `${fahrenheit.toFixed(2)} degrees Fahrenheit is equal to ${celsius.toFixed(2)} degrees Celsius.`;
+      } else {
+        explanationContainer.textContent = '';
+      }
+    });
+
+    // Add a comment
+    submitBtn.addEventListener('click', function () {
+      const comment = commentInput.value.trim();
+      if (comment !== '') {
+        const commentList = document.createElement('ul');
+        const listItem = document.createElement('li');
+        listItem.textContent = comment;
+        commentList.appendChild(listItem);
+        explanationContainer.appendChild(commentList);
+        commentInput.value = '';
+      }
     });
   </script>
 </body>
