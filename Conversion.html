@@ -79,12 +79,6 @@
     </div>
 
     <div class="explanation" id="explanation"></div>
-
-    <hr>
-
-    <h2>Add a Comment</h2>
-    <textarea id="comment" placeholder="Enter your comment"></textarea>
-    <button id="submitBtn">Submit</button>
   </div>
 
   <script>
@@ -94,7 +88,6 @@
     const convertBtn = document.getElementById('convertBtn');
     const resetBtn = document.getElementById('resetBtn');
     const reverseBtn = document.getElementById('reverseBtn');
-    const commentInput = document.getElementById('comment');
     const submitBtn = document.getElementById('submitBtn');
     const explanationContainer = document.getElementById('explanation');
 
@@ -133,19 +126,6 @@
         explanationContainer.textContent = `${fahrenheit.toFixed(2)} degrees Fahrenheit is equal to ${celsius.toFixed(2)} degrees Celsius.`;
       } else {
         explanationContainer.textContent = '';
-      }
-    });
-
-    // Add a comment
-    submitBtn.addEventListener('click', function () {
-      const comment = commentInput.value.trim();
-      if (comment !== '') {
-        const commentList = document.createElement('ul');
-        const listItem = document.createElement('li');
-        listItem.textContent = comment;
-        commentList.appendChild(listItem);
-        explanationContainer.appendChild(commentList);
-        commentInput.value = '';
       }
     });
   </script>
