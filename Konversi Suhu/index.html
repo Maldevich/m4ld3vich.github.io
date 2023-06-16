@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Temperature Converter</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="converter">
-        <h1>Temperature Converter</h1>
-        <form>
-          <label for="celsius">Enter temperature in Celsius:</label>
-          <input type="number" id="celsius" name="celsius" required>
-          <button type="button" onclick="convert()">Convert</button>
-          <button type="button" onclick="reset()">Reset</button>
-          <button type="button" onclick="reverse()">Reverse</button>
-        </form>
-        <div id="result"></div>
-      </div>
-    <script src="script.js"></script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Konversi Temperatur</title>
+    </head>
+    <body>
+        <header>
+            <h1>-= Konversi Temperatur =-</h1>
+        </header>
+        
+        <section class="InputSection">
+          <label for="InputSection">Celcius</label>
+          <input type="number" id="inputField"/>
+          <div class="InputButtonSection">
+          <button>Konversi</button>
+          <button>Reset</button>
+          <button>Balik</button>
+          </div>
+        </section>
+        <section class="OutputSection">
+          <label for="OutputSection">Fahrenheit</label>
+          <input type="number" id="outputField"/>
+        </section>
+    </body>    
 </html>
