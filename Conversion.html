@@ -67,10 +67,10 @@
   <div class="container">
     <h1>Temperature Conversion</h1>
     <label for="celsius">Celsius:</label>
-    <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+    <input type="number" id="celsius" placeholder="">
 
     <label for="fahrenheit">Fahrenheit:</label>
-    <input type="number" id="fahrenheit" placeholder="Temperature in Fahrenheit" readonly>
+    <input type="number" id="fahrenheit" placeholder="" readonly>
 
     <div class="btn-container">
       <button id="convertBtn" disabled>Convert</button>
@@ -103,7 +103,7 @@
       fahrenheitInput.value = fahrenheit.toFixed(2);
 
       // Display explanation
-      explanationContainer.textContent = `${celsius} degrees Celsius is equal to ${fahrenheit.toFixed(2)} degrees Fahrenheit.`;
+      explanationContainer.textContent = `${celsius} Celcius*(9/5)+32=${fahrenheit.toFixed(2)} Fahrenheit`;
     });
 
     // Reset the inputs and explanation
@@ -123,7 +123,7 @@
 
       // Display explanation
       if (celsius && fahrenheit) {
-        explanationContainer.textContent = `${fahrenheit.toFixed(2)} degrees Fahrenheit is equal to ${celsius.toFixed(2)} degrees Celsius.`;
+        explanationContainer.textContent = `${fahrenheit.toFixed(2)} Fahrenheit-32*(5/9)=${celsius.toFixed(2)} Celsius`;
       } else {
         explanationContainer.textContent = '';
       }
