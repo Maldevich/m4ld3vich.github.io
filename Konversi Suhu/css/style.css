@@ -1,84 +1,58 @@
-/* MARK: DEFAULT */
-
-body  {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: Arial, sans-serif;
 }
-
-header {
-  background-color: blueviolet;
-  color: bisque;
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: burlywood;
+  border: 1px solid slategray;
+  border-radius: 5px;
+}
+h1 {
   text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
-  border-radius: 10px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 label {
-  margin-bottom: 6px;
-  font-size: 18px;
-  font-weight: bold;
-  color: slategray;
+  display: block;
+  margin-bottom: 5px;
 }
-
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+  resize: vertical;
+}
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
 button {
-  background-color: rgb(129, 89, 167);
-  color: bisque;
-  border-radius: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
+  padding: 8px 12px;
+  background-color: lightgreen;
+  color: black;
   border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
-
-button:hover {
-  background-color: rgb(147, 85, 206);
-  color: bisque;
+button:disabled {
+  background-color: red;
+  cursor: not-allowed;
 }
-
-button:active {
-  transform: translateY(3px);
-  background-color: rgb(132, 0, 255);
-}
-
-/* MARK: ID */
-#inputField {
-  outline: none;
-  font-size: 18px;
-  border-radius: 8px;
-  border: solid slategray;
+.explanation {
+  margin-top: 20px;
   padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.4;
 }
-
-#outputField {
-  outline: none;
-  font-size: 18px;
-  border-radius: 8px;
-  border: solid slategray;
-  padding: 10px;
-}
-
-/* MARK: CLASS */
-#inputField:focus {
-  border: solid cornflowerblue;
-}
-
-.InputSection {
-  display: flex;
-  flex-direction: column;
-}
-
-.InputButtonSection {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-}
-
-#outputField:focus {
-  border: solid cornflowerblue;
-}
-
-.OutputSection {
-  display: flex;
-  flex-direction: column;
-}
-
