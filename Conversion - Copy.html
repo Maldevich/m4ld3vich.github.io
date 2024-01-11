@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Conversion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    .btn-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .explanation {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Temperature Conversion</h1>
+    <label for="celsius">Celsius:</label>
+    <input type="number" id="celsius" placeholder="">
+
+    <label for="fahrenheit">Fahrenheit:</label>
+    <input type="number" id="fahrenheit" placeholder="" readonly>
+
+    <div class="btn-container">
+      <button id="convertBtn" disabled>Convert</button>
+      <button id="resetBtn">Reset</button>
+      <button id="reverseBtn">Reverse</button>
+    </div>
+
+    <div class="explanation" id="explanation"></div>
+  </div>
+
+  <script>
+    // Get DOM elements
+    const celsiusInput = document.getElementById('celsius');
+    const fahrenheitInput = document.getElementById('fahrenheit');
+    const convertBtn = document.getElementById('convertBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const reverseBtn = document.getElementById('reverseBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const explanationContainer = document.getElementById('explanation');
+
+    // Enable or disable Convert button based on input
+    celsiusInput.addEventListener('input', function () {
+      convertBtn.disabled = celsiusInput.value.trim() === '';
+    });
+
+    // Convert Celsius to Fahrenheit
+    convertBtn.addEventListener('click', function () {
+      const celsius = parseFloat(celsiusInput.value);
+      const fahrenheit = (celsius * 9 / 5) + 32;
+      fahrenheitInput.value = fahrenheit.toFixed(2);
+
+      // Display explanation
+      explanationContainer.textContent = `${celsius} Celcius*(9/5)+32=${fahrenheit.toFixed(2)} Fahrenheit`;
+    });
+
+    // Reset the inputs and explanation
+    resetBtn.addEventListener('click', function () {
+      celsiusInput.value = '';
+      fahrenheitInput.value = '';
+      convertBtn.disabled = true;
+      explanationContainer.textContent = '';
+    });
+
+    // Reverse the conversion
+    reverseBtn.addEventListener('click', function () {
+      const celsius = parseFloat(celsiusInput.value);
+      const fahrenheit = parseFloat(fahrenheitInput.value);
+      celsiusInput.value = fahrenheit ? ((fahrenheit - 32) * 5 / 9).toFixed(2) : '';
+      fahrenheitInput.value = celsius ? ((celsius * 9 / 5) + 32).toFixed(2) : '';
+
+      // Display explanation
+      if (celsius && fahrenheit) {
+        explanationContainer.textContent = `${fahrenheit.toFixed(2)} Fahrenheit-32*(5/9)=${celsius.toFixed(2)} Celsius`;
+      } else {
+        explanationContainer.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>
